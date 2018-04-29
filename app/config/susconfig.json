@@ -1,0 +1,49 @@
+{
+  "name": "susconfig",
+  "version": "0.0.1",
+  "license": "CC BY-SA (Attribution-ShareAlike), 2018",
+  "default_language": "en-us",
+  "range": [1,5],
+  "scale": [
+    {
+      "id": 0,
+      "label": "I think that I would like to use this system frequently."
+    },
+    {
+      "id": 1,
+      "label": "I found the system unnecessarily complex."
+    },
+    {
+      "id": 2,
+      "label": "I thought the system was easy to use."
+    },
+    {
+      "id": 3,
+      "label": "I think that I would need the support of a technical person to be able to use this system."
+    },
+    {
+      "id": 4,
+      "label": "I found the various functions in this system were well integrated."
+    },
+    {
+      "id": 5,
+      "label": "I thought there was too much inconsistency in this system."
+    },
+    {
+      "id": 6,
+      "label": "I would imagine that most people would learn to use this system very quickly."
+    },
+    {
+      "id": 7,
+      "label": "I found the system very cumbersome to use."
+    },
+    {
+      "id": 8,
+      "label": "I felt very confident using the system."
+    },
+    {
+      "id": 9,
+      "label": "I needed to learn a lot of things before I could get going with this system."
+    }
+  ]
+}
