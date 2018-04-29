@@ -1,0 +1,21 @@
+{
+  "name": "react-sus",
+  "version": "0.0.1",
+  "description": "A React implementation of the System Usability Scale",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Conny Kawohl",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^4.6.0",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
