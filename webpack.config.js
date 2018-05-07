@@ -19,22 +19,36 @@ module.exports = {
 			loader: 'babel-loader',
 			query : {
 				presets: ['es2015']
-			}
-		}]
+			},
+		},
+		{
+			test   : /\.tsx?$/,
+			loader : 'awesome-typescript-loader',
+			exclude: /node_modules/,
+		},
+		{
+			enforce: 'pre',
+			test   : /\.js$/,
+			loader : 'source-map-loader'
+		}
+		]
 	},
 	resolve: {
-		extensions: ['.json', '.js', '.jsx', '.css']
+		extensions: ['.ts', '.tsx','.json', '.js', '.jsx', '.css']
 	},
 	devtool  : 'source-map',
-	 	devServer: {
+	devServer: {
 		publicPath: path.join('/')
 	},
 	plugins: [
-
 		new HtmlWebpackPlugin({
 			title   : 'React SUS',
 			filename: 'index.html',
 			template: 'index.html'
 		})
-	]
+	],
+/* 	externals: {
+		'react'    : 'React',
+		'react-dom': 'ReactDOM'
+	}, */
 };

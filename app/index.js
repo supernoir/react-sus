@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Scale from './scale/Scale';
-import Score from './score/Score';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { rootReducer } from './reducers';
+
+import App from './App';
+
+
+const store = createStore(
+	rootReducer,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export default class ReactSUS extends React.Component {
 	render(){
 		return(
-			<div className="sus">
-				<Scale/>
-				<Score/>
-			</div>
+			<Provider store={store}>
+				<App store={store}/>
+			</Provider>
 		);
 	}
 }

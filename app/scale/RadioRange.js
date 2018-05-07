@@ -2,6 +2,9 @@ import React from 'react';
 import Radio from './Radio';
 
 export default class RadioRange extends React.Component{
+	constructor(props){
+		super(props);
+	}
 	extendRange (range) {
 		let firstItem = range[0];
 		let lastItem = range[1];
@@ -15,7 +18,7 @@ export default class RadioRange extends React.Component{
 
 	displayRadioRange () {
 		const extendedRange = this.extendRange(this.props.range);
-		return extendedRange.map((val, index) => <Radio key={index} id={index} label={val} type={'radio'}/>);
+		return extendedRange.map((val, index) => <Radio key={index} id={index} label={val} radioContext={this.props.label} type={'radio'} store={this.props.store}/>);
 	};
 
 	render(){

@@ -14,15 +14,29 @@ const mockScore = [
 ];
 
 export default class Score extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			scales: []
+		};
+	}
+
+	componentWillReceiveProps(){
+		let scaleInput = this.props.scores.ProcessScales;
+		console.log(scaleInput);
+		this.setState({ scales: scaleInput });
+	}
+
+
 	render(){
 		return(
 			<div className="sus-score">
 				<h2>Score</h2>
 				<ul className="scorelist">
-					{mockScore.map((score, index)=> {
+					{this.state.scales.map((score, index)=> {
 						return <li key={index} className="scorelist-item">
-							<p className="scorelist-item--question">{score.question} ({score.id})</p>
-							<p className="scorelist-item--score">{score.score}</p>
+							<p className="scorelist-item--question">{score.scales.context}</p>
+							<p className="scorelist-item--score">{score.scales.value}</p>
 						</li>;
 					})}
 				</ul>
