@@ -18,7 +18,7 @@ export default class RadioRange extends React.Component{
 
 	displayRadioRange () {
 		const extendedRange = this.extendRange(this.props.range);
-		return extendedRange.map((val, index) => <Radio key={index} id={index} label={val} radioContext={this.props.label} type={'radio'} store={this.props.store}/>);
+		return extendedRange.map((val, index) => <Radio key={index} id={index} label={val} radioContext={this.props.context} type={'radio'} store={this.props.store}/>);
 	};
 
 	render(){

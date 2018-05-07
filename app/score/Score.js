@@ -23,7 +23,6 @@ export default class Score extends React.Component {
 
 	componentWillReceiveProps(){
 		let scaleInput = this.props.scores.ProcessScales;
-		console.log(scaleInput);
 		this.setState({ scales: scaleInput });
 	}
 
