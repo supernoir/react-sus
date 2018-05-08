@@ -1,36 +1,32 @@
 import React from 'react';
-
-const mockScore = [
-	{ id: 1, question: 'Frequency', score: '2' },
-	{ id: 2, question: 'Complexity', score: '1' },
-	{ id: 3, question: 'Ease of Use', score: '3' },
-	{ id: 4, question: 'Support', score: '2' },
-	{ id: 5, question: 'Integration', score: '4' },
-	{ id: 6, question: 'Consistency', score: '2' },
-	{ id: 7, question: 'Learnability', score: '1' },
-	{ id: 8, question: 'Encumbrance', score: '3' },
-	{ id: 9, question: 'Confidence', score: '5' },
-	{ id: 10, question: 'Uptake', score: '4' }
-];
+import CalculateScore from '../services/CalculateScore';
 
 export default class Score extends React.Component {
 	constructor(){
 		super();
 		this.state = {
-			scales: []
+			scales: [],
+			score : 0
 		};
 	}
 
+
 	componentWillReceiveProps(){
 		let scaleInput = this.props.scores.ProcessScales;
-		this.setState({ scales: scaleInput });
+		let currentScore = new CalculateScore(scaleInput || []);
+		let calculatedScore = currentScore.deriveScore();
+		this.setState({
+			scales: scaleInput,
+			score : calculatedScore
+		});
 	}
 
 
 	render(){
 		return(
 			<div className="sus-score">
-				<h2>Score</h2>
+				<h2>Score:</h2>
+				<h3>{this.state.score}</h3>
 				<ul className="scorelist">
 					{this.state.scales.map((score, index)=> {
 						return <li key={index} className="scorelist-item">
@@ -43,3 +39,4 @@ export default class Score extends React.Component {
 		);
 	}
 }
+

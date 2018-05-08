@@ -22,7 +22,7 @@ export default class Radio extends React.Component{
 	render(){
 		return(
 			<label>
-				<input type="radio" label={this.props.label} key={this.props.id} onClick={this.handleSelect}/>
+				<input type="radio" name={this.props.radioContext} label={this.props.label} key={this.props.id} onClick={this.handleSelect}/>
 				{this.props.label}
 			</label>
 		);
