@@ -7,7 +7,9 @@ export default class App extends React.Component{
 		return(
 			<div className="sus">
 				<ScaleContainer {...this.props}/>
+
 				<ScoreContainer {...this.props}/>
+
 			</div>
 		);
 	}

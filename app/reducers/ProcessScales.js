@@ -6,7 +6,7 @@ const ProcessScales = (state = [], action) => {
 			return [
 				...state,
 				{
-					scales: action.input,
+					input: action.input,
 				}
 			];
 		default:

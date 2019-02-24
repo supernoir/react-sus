@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Score from '../score/Score';
 
 const mapStateToProps = state => ({
-	scores: state
+	scales: state
 });
 
 /* const mapDispatchToProps = (dispatch, ownProps) => ({

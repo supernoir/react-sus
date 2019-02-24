@@ -7,9 +7,29 @@
   6. SUS scores have a range of 0 to 100.
 */
 
+
+const exampleData = [{
+	scales: {
+		id   : 1,
+		value: 2
+	}
+},{
+	scales: {
+		id   : 2,
+		value: 4
+	}
+}];
+
 export default class CalculateScore {
 	constructor(score){
 		this.score = score;
+
+		this.calculateOddValue = this.calculateOddValue.bind(this);
+		this.calculateEvenValue = this.calculateEvenValue.bind(this);
+		this.prepareScores = this.prepareScores.bind(this);
+		this.getSumTotal = this.getSumTotal.bind(this);
+		this.compoundTotal = this.compoundTotal.bind(this);
+		this.deriveScore = this.deriveScore.bind(this);
 	}
 
 	calculateOddValue(oddNumber){
@@ -58,12 +78,14 @@ export default class CalculateScore {
 		}
 	}
 
-	deriveScore () {
+	deriveScore (arr) {
 		return this.compoundTotal(
 			this.getSumTotal(
 				this.prepareScores(
-					this.score
+					arr
 				)));
 	}
-
 }
+
+/* const sample = CalculateScore.prototype.deriveScore(exampleData);
+console.log(sample); */

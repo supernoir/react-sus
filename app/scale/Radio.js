@@ -1,6 +1,5 @@
 import React from 'react';
 import { addScaleInput } from '../actions/index';
-import ProcessScales from '../reducers/ProcessScales';
 
 /* interface RadioProps {
 	children: any

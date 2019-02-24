@@ -25,7 +25,11 @@ export default class RadioRange extends React.Component{
 		return (
 			<div className="sus-scale-scaleitem range">
 				<p>{this.props.label}</p>
-				{this.displayRadioRange()}
+				<div>
+					<span>{'Strongly disagree'}</span>
+					{this.displayRadioRange()}
+					<span>{'Strongly agree'}</span>
+				</div>
 			</div>
 		);
 	}
